@@ -27,7 +27,7 @@ body::-webkit-scrollbar {
 
 /* ==== Área do topo (logo + título) ==== */
 .logo {
-  width: 300px;
+  width: 200px;
   height: auto;
   display: block;
   margin: 0 auto 30px;  /* <<< aumenta o espaço abaixo da logo */
@@ -202,4 +202,5 @@ body::-webkit-scrollbar {
   color: #000000;              
   font-family: Arial, sans-serif; /* fonte padrão */
   text-align: center;          /* centraliza texto */
+
 }
