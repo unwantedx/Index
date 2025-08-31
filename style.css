@@ -1,0 +1,205 @@
+/* ==== Estilos gerais da página ==== */
+html, body {
+    height: 100%;              /* ocupa toda a altura da tela */
+    margin: 0;                 /* remove margens padrão */
+    padding: 0;                /* remove espaçamento padrão */
+    overflow-x: hidden;        /* impede rolagem lateral */
+    overflow-y: scroll;        /* mantém barra vertical sempre ativa */
+}
+
+body {
+    background-color: #FFFFFF; /* fundo preto */
+    display: flex;             /* ativa flexbox */
+    flex-direction: column;    /* empilha elementos em coluna */
+    align-items: center;       /* centraliza horizontalmente */
+    justify-content: flex-start; /* começa do topo */
+    padding: 20px;             /* espaço interno */
+    box-sizing: border-box;    /* inclui borda/padding no cálculo */
+    font-family: Arial, sans-serif; /* fonte padrão */
+    -webkit-overflow-scrolling: touch; /* rolagem suave no iOS */
+    scrollbar-width: none;     /* oculta barra no Firefox */
+}
+
+/* Chrome, Safari e Edge: esconde a barra */
+body::-webkit-scrollbar {
+    display: none; /* oculta a barra de rolagem */
+}
+
+/* ==== Área do topo (logo + título) ==== */
+.logo {
+  width: 300px;
+  height: auto;
+  display: block;
+  margin: 0 auto 30px;  /* <<< aumenta o espaço abaixo da logo */
+}
+
+.logo img {
+  display: block;
+  margin: 10px auto 5px; /* só 10px de espaço em cima e 5px embaixo */
+  width: 800px;          /* aumenta o tamanho da logo */
+  max-width: 80%;        /* garante que não estoure em telas pequenas */
+}
+
+.logo h1 {
+  margin: 0;
+  padding: 0;
+  line-height: 1;
+  margin-bottom: 20px; /* <<< Espaço entre o título e a caixa */
+}
+
+/* ==== Estilo do título principal ==== */
+.texto-neon {
+  color: #DC143C;              /* cor rosa */
+  text-shadow:                 /* efeito de brilho neon */
+    0 0 5px #ff007f,
+    0 0 10px #ff007f,
+    0 0 20px #ff007f,
+    0 0 40px #ff4da6;
+  font-family: Arial, sans-serif; /* fonte */
+  text-align: center;          /* centraliza o texto */
+}
+
+/* ==== Container principal ==== */
+.content-container {
+    display: flex;             /* flexbox */
+    flex-direction: column;    /* itens em coluna */
+    align-items: center;       /* centraliza horizontalmente */
+    gap: 20px;                 /* espaçamento entre elementos */
+    width: 100%;               /* ocupa largura total */
+    max-width: 100%;           /* não ultrapassa a tela */
+    box-sizing: border-box;    /* inclui padding/borda */
+    padding-bottom: 40px;      /* espaço no final da página */
+}
+
+/* ==== Cada seção (título + textarea) ==== */
+.section {
+    display: flex;             /* flexbox */
+    flex-direction: column;    /* empilha título e textarea */
+    align-items: center;       /* centraliza conteúdo */
+    gap: 10px;                 /* espaço entre título e textarea */
+}
+
+/* ==== Estilo base das caixas ==== */
+.caixa {
+    padding: 15px;             /* espaço interno */
+    border: 2px solid #000000; /* borda rosa */
+    border-radius: 8px;        /* cantos arredondados */
+    background-color: #ffffff; /* fundo cinza escuro */
+    color: #000000;            /* texto branco */
+    font-size: 14px;           /* tamanho da fonte */
+    resize: vertical;          /* permite redimensionar só na vertical */
+    box-sizing: border-box;    /* padding incluso no tamanho */
+    text-align: center;        /* texto centralizado */
+}
+
+/* Caixa principal */
+.principal {
+    height: 150px;             /* altura fixa */
+    width: 350px;              /* largura fixa */
+}
+
+/* Caixas secundárias (Aprovadas/Reprovadas) */
+.caixa-secundaria {
+    height: 200px;             /* altura fixa */
+    width: 350px;              /* largura fixa */
+}
+
+/* Efeito ao clicar na caixa */
+.caixa:focus {
+    outline: none;             /* remove contorno padrão */
+    border-color: #DC143C;     /* destaque rosa */
+    box-shadow: 0 0 10px rgba(255, 102, 153, 0.3); /* brilho suave */
+}
+
+/* ==== Container dos botões ==== */
+.button-container {
+    display: flex;             /* flexbox */
+    gap: 15px;                 /* espaço entre botões */
+    justify-content: center;   /* centraliza horizontalmente */
+    flex-wrap: wrap;           /* quebra linha se faltar espaço */
+}
+
+/* ==== Botão Start ==== */
+.btn-start {
+    border: none;
+    background: linear-gradient(0deg, #DC143C 0%, #FF5C5C 100%); /* gradiente crimson */
+    color: #fff;
+    overflow: hidden;
+    position: relative;
+    cursor: pointer;
+    padding: 12px 25px;
+    font-size: 16px;
+    border-radius: 8px;
+    min-width: 150px;
+    text-align: center;
+    transition: opacity 0.3s;
+}
+
+.btn-start:hover {
+    opacity: 0.7;
+}
+
+.btn-start:active {
+    box-shadow:
+      4px 4px 6px 0 rgba(255,255,255,.3),
+      -4px -4px 6px 0 rgba(116,125,136,.2), 
+      inset -4px -4px 6px 0 rgba(255,255,255,.2),
+      inset 4px 4px 6px 0 rgba(0,0,0,.2);
+}
+
+/* ==== Botão Stop ==== */
+.btn-stop {
+    border: none;
+    background: linear-gradient(0deg, #DC143C 0%, #FF5C5C 100%); /* igual ao start */
+    color: #fff;
+    overflow: hidden;
+    position: relative;
+    cursor: pointer;
+    padding: 12px 25px;
+    font-size: 16px;
+    border-radius: 8px;
+    min-width: 150px;
+    text-align: center;
+    transition: opacity 0.3s;
+}
+
+.btn-stop:hover {
+    opacity: 0.8; /* pode deixar diferente do start se quiser */
+}
+
+.btn-stop:active {
+    box-shadow:
+      4px 4px 6px 0 rgba(255,255,255,.3),
+      -4px -4px 6px 0 rgba(116,125,136,.2), 
+      inset -4px -4px 6px 0 rgba(255,255,255,.2),
+      inset 4px 4px 6px 0 rgba(0,0,0,.2);
+}
+
+/* ==== Brilho animado ==== */
+.btn-start:before,
+.btn-stop:before {
+    position: absolute;
+    content: '';
+    display: inline-block;
+    top: -180px;
+    left: 0;
+    width: 30px;
+    height: 100%;
+    background-color: #fff;
+    animation: shiny-btn1 3s ease-in-out infinite;
+}
+
+/* Animação do brilho */
+@keyframes shiny-btn1 {
+    0%   { transform: scale(0) rotate(45deg); opacity: 0; }
+    80%  { transform: scale(0) rotate(45deg); opacity: 0.5; }
+    81%  { transform: scale(4) rotate(45deg); opacity: 1; }
+    100% { transform: scale(50) rotate(45deg); opacity: 0; }
+}
+
+/* ==== Subtítulos (h2) ==== */
+.section h2 {
+  color: #000000;              
+  font-family: Arial, sans-serif; /* fonte padrão */
+  text-align: center;          /* centraliza texto */
+}
